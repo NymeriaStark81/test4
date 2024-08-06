@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom";
-const PORT = 3000;
+//const PORT = 3000;
 //import { response } from "express";
 
 function Login() {
@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch(`http://localhost:${PORT}/login/`, {
+            fetch(`http://localhost:3000/login/`, {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
