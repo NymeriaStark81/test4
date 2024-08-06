@@ -1,9 +1,6 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useNavigate } from "react-router-dom";
 //import { response } from "express";
-const dotenv = require('dotenv');
-dotenv.config();
-
 
 function Login() {
     const [email, setEmail] = useState('');
