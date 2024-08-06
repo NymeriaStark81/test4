@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("http://localhost:3000/login/", {
+            fetch("/login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
