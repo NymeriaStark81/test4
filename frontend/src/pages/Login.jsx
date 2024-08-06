@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 //import { response } from "express";
+const dotenv = require('dotenv');
+dotenv.config();
 
 
 function Login() {
@@ -12,7 +14,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("/login/", {
+            fetch("${process.env.api_url}/login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
