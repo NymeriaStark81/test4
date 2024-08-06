@@ -14,7 +14,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("${process.env.api_url}/login/", {
+            fetch("https://test4-gamma-two.vercel.app/login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
