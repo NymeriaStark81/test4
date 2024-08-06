@@ -14,7 +14,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("${process.env.api_url}/login/", {
+            fetch("../login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
