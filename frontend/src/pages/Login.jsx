@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("https://test4-one-zeta.vercel.app/login", {
+            fetch("/login", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {

@@ -10,6 +10,7 @@
     "dev": "concurrently \" npm run server \" \" npm run client \""
   },
   "keywords": [],
+  "proxy": "https://test4-one-zeta.vercel.app",
   "author": "",
   "license": "ISC",
   "description": "",
