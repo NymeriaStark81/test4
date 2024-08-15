@@ -47,7 +47,7 @@ function Login() {
         <div>
             <form onSubmit={handleSubmit}>
                 <h1> Login </h1>
-                <input type="email" onChange={(e) => { setEmail(e.target.value)}} placeholder="Email:" name="email"/>
+                <input type="email" onChange={(e) => { setEmail(e.target.value), console.log(email)}} placeholder="Email:" name="email"/>
                 <input type="password" onChange={(e) => { setPassword(e.target.value)}} placeholder="Pass:" name="password"/>
                 <button type="submit">Login</button>
             </form>
