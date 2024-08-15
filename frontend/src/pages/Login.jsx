@@ -12,8 +12,6 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            console.log(email);
-            console.log(password);
             fetch("https://test4-beta-seven.vercel.app/login", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
@@ -34,6 +32,8 @@ function Login() {
                         alert("Wrong password")
                     }
                 })
+            setEmail('');
+            setPassword('');
         }
         catch(e){
             console.log(e);
@@ -47,8 +47,8 @@ function Login() {
         <div>
             <form onSubmit={handleSubmit}>
                 <h1> Login </h1>
-                <input type="email" onChange={(e) => { setEmail(e.target.value), console.log(email)}} placeholder="Email:" name="email"/>
-                <input type="password" onChange={(e) => { setPassword(e.target.value)}} placeholder="Pass:" name="password"/>
+                <input type="email" onChange={(e) => { setEmail(e.target.value)}} placeholder="Email:" name="email" value={email}/>
+                <input type="password" onChange={(e) => { setPassword(e.target.value)}} placeholder="Pass:" name="password" value={password}/>
                 <button type="submit">Login</button>
             </form>
         </div>
