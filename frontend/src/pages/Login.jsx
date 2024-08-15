@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("/login", {
+            fetch("http://test4-dun-one.vercel.app/login", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
