@@ -12,6 +12,8 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
+            console.log(email);
+            console.log(password);
             fetch("https://test4-beta-seven.vercel.app/login", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
