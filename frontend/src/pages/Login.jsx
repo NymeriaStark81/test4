@@ -32,8 +32,6 @@ function Login() {
                         alert("Wrong password")
                     }
                 })
-            setEmail('');
-            setPassword('');
         }
         catch(e){
             console.log(e);
