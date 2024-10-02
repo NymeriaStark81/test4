@@ -10,7 +10,6 @@
     "dev": "concurrently \" npm run server \" \" npm run client \""
   },
   "keywords": [],
-  "proxy": "https://test4-dun-one.vercel.app",
   "author": "",
   "license": "ISC",
   "description": "",
