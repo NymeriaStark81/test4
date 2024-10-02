@@ -1,42 +1,243 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.auth {
+  background-image: url('/images/background_login.png');
+  width: 1440px;
+  height: 1024px;
+  position: relative;
+  display: flex;
+  overflow: hidden;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.auth-login {
+    position: relative;
+    width: 600px;
+    height: 750px;
+    left: 115px;
+    top: 112px;
+    background: rgba(251, 209, 211, 0.65);
+    border-radius: 50px 0px 0px 50px
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.auth-login-div1 {
+    position: relative;
+    width: 367px;
+    height: 126px;
+    left: 80px;
+    top: 160px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 61px;
+    color: #000000
 }
 
-.card {
-  padding: 2em;
+.auth-login-div2 {
+    position: absolute;
+    width: 296px;
+    height: 49px;
+    left: 80px;
+    top: 259px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 140%;
+    color: #1E1E1E
 }
 
-.read-the-docs {
-  color: #888;
+.auth-login-input {
+  align-items: center;
+  padding: 12px 16px;
+  color: #000000;
+
+  width: 296px;
+  min-width: 240px;
+  height: 40px;
+
+  font-size: 20px;
+
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+}
+
+.auth-login-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  position: absolute;
+  width: 100px;
+  height: 50px;
+  left: 93px;
+  top: 559px;
+  font-size: 30px;
+  background: #2C2C2C;
+  border: 1px solid #2C2C2C;
+  border-radius: 8px;
+}
+
+.auth-signup{
+  position: relative;
+  width: 600px;
+  height: 750px;
+  left: 125px;
+  top: 112px;
+
+  background: rgba(194, 195, 243, 0.65);
+  border-radius: 0px 50px 50px 0px;
+}
+
+.auth-signup-div1{
+  position: absolute;
+  width: 367px;
+  height: 126px;
+  right: 80px;
+  top: 160px;
+
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 50px;
+  line-height: 61px;
+  text-align: right;
+
+  color: #000000;
+}
+
+.auth-signup-div2 {
+  position: absolute;
+  width: 296px;
+  height: 49px;
+  right: 80px;
+  top: 259px;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 35px;
+  line-height: 140%;
+  text-align: right;
+  color: #1E1E1E;
+}
+
+.auth-signup-input {
+  position: relative;
+  right: 32px;
+  padding: 12px 16px;
+  color: #000000;
+
+  width: 296px;
+  min-width: 240px;
+  height: 40px;
+
+  font-size: 20px;
+
+  background: #FFFFFF;
+  border: 1px solid #D9D9D9;
+  border-radius: 8px;
+}
+
+.auth-signup-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 12px;
+  gap: 8px;
+  position: absolute;
+  width: 125px;
+  height: 50px;
+  right: 93px;
+  top: 559px;
+  font-size: 30px;
+  background: #2C2C2C;
+  border: 1px solid #2C2C2C;
+  border-radius: 8px;
+}
+
+.auth-logo {
+  position: absolute;
+  width: 424px;
+  height: 424px;
+  left: 508px;
+  top: 300px;
+}
+
+.whole {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  position: relative;
+  left: 10px;
+}
+
+
+.main-canvas {
+  background-color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+
+.selected {
+  border: 2px dashed black ;
+}
+
+.edit-canvas {
+  float: right;
+  width: 200px;
+  background-color: #888;
+  position: relative;
+  z-index: 0;
+}
+
+.add-canvas {
+  float: left;
+  width: 200px;
+  background-color: #888;
+  position: relative;
+  z-index: 0;
+}
+
+
+.resize {
+  width: 6px;
+  height: 6px;
+  z-index: 15;
+  background-color: darkolivegreen;
+}
+
+.nesw-resize {
+  cursor: nesw-resize;
+}
+
+.nwse-resize {
+  cursor: nwse-resize;
+}
+
+.ns-resize {
+  cursor: ns-resize;
+}
+
+.ew-resize {
+  cursor: ew-resize;
+}
+
+.move {
+  cursor: move;
+}
+
+.selected_temp {
+  color: blueviolet;
 }

@@ -9,7 +9,7 @@ class authController {
                 const pass=await user.findOne({email:req.body.email, password:req.body.password})
 
                 if(pass){
-                    res.json("exist")
+                    res.json(pass)
                 }
                 else{
                     if(check){

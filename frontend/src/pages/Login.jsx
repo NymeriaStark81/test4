@@ -12,7 +12,7 @@ function Login() {
     const handleSubmit = (e) => {
         try {
             e.preventDefault();
-            fetch("/login", {
+            fetch("http://localhost:3000/login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
@@ -21,9 +21,13 @@ function Login() {
             })
                 .then((res) => {return res.json()})
                 .then((data) => {
-                    if(data=="exist"){
-                        //console.log('Logged in')
-                        navigate('/signup')
+                    if(data._id){
+                        navigate('/homepage', {
+                            state: {
+                                userID: data._id
+                            }
+                        })
+                        
                     }
                     else if(data=="notexist"){
                         alert("User have not sign up")
@@ -44,13 +48,32 @@ function Login() {
     
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
-                <h1> Login </h1>
-                <input type="email" onChange={(e) => { setEmail(e.target.value)}} placeholder="Email:" name="email"/>
-                <input type="password" onChange={(e) => { setPassword(e.target.value)}} placeholder="Pass:" name="password"/>
-                <button type="submit">Login</button>
-            </form>
+        <div className="auth">
+            <div className="auth-login">
+                <form onSubmit={handleSubmit}>
+                    <h1 className="auth-login-div1"> Login </h1>
+                    <h1 className="auth-login-div2">
+                        Email
+                        <input type="email" className="auth-login-input" onChange={(e) => { setEmail(e.target.value)}} placeholder="Email:" name="email"/>
+                        Password
+                        <input type="password" className="auth-login-input" onChange={(e) => { setPassword(e.target.value)}} placeholder="Pass:" name="password"/>
+                    </h1>
+                    <button type="submit" className="auth-login-btn">Login</button>
+                </form>
+            </div>
+            <div className="auth-signup">
+                <form>
+                    <h1 className="auth-signup-div1"> Signup </h1>
+                    <h1 className="auth-signup-div2">
+                        Email
+                        <input type="email" className="auth-signup-input" onChange={(e) => { setEmail(e.target.value)}} placeholder="Email:" name="email"/>
+                        Password
+                        <input type="password" className="auth-signup-input" onChange={(e) => { setPassword(e.target.value)}} placeholder="Pass:" name="password"/>
+                    </h1>
+                    <button type="submit" className="auth-signup-btn">Signup</button>
+                </form>
+            </div>
+            <img src="/images/logo_transparent.png" className="auth-logo"></img>
         </div>
     )
 }

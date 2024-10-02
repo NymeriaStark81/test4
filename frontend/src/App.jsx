@@ -4,7 +4,12 @@ import {
   Route,
 } from "react-router-dom";
 import Login from './pages/Login'
-import Signup from "./pages/Signup";
+import EditTemplate from "./pages/EditTemplate";
+import Homepage from './pages/Homepage'
+import HabitList from './pages/HabitList'
+import JournalCreate from './pages/JournalCreate'
+
+
 
 //const userInfo = token_decode(localStorage.getItem('canva_token'))
 
@@ -20,8 +25,23 @@ function App() {
                   />
                   <Route
                       exact
-                      path="/signup"
-                      element={<Signup />}
+                      path="/homepage"
+                      element={<Homepage />}
+                  />
+                  <Route
+                      exact
+                      path="/habit"
+                      element={<HabitList />}
+                  />
+                  <Route
+                      exact
+                      path="/editTemplate"
+                      element={<EditTemplate />}
+                  />
+                  <Route
+                      exact
+                      path="/journalCreate"
+                      element={<JournalCreate />}
                   />
               </Routes>
           </BrowserRouter>
