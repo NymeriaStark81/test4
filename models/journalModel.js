@@ -37,6 +37,9 @@ const template_schema = new Schema({
     tagMonth: {
         type: Array,
         required: true
+    },
+    thumbnail: {
+        type: String
     }
 })
 

@@ -10,19 +10,14 @@ const template_schema = new Schema({
         type: String,
         required: true
     },
-    status: {
-        type: String,
+    elements: {
+        type: Array,
         required: true
     },
-    input: {
-        type: String
+    lock: {
+        type: Boolean,
+        required: true
     },
-    output: {
-        type: String
-    },
-    elements: {
-        type: Array
-    }
 })
 
 module.exports = model('habit_lists', template_schema)

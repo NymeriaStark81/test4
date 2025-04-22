@@ -14,8 +14,15 @@ const template_schema = new Schema({
         type: String,
         required: true
     },
+    thumbnail: {
+        type: String,
+    },
     temp_type: {
         type: String,
+        required: true
+    },
+    order: {
+        type: Number,
         required: true
     },
     elements: {
