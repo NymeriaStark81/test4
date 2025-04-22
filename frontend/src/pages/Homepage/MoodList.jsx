@@ -6,8 +6,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faTrashCan, faPenToSquare } from "@fortawesome/free-regular-svg-icons"
 import { faCirclePlus } from "@fortawesome/free-solid-svg-icons"
 
-const socket = io('https://test4-nymeria-starks-projects.vercel.app'); 
-
 const MoodList = ({setSection, setSelectMood}) => {
     const {state} = useLocation()
     var [stage, setStage] = useState(1)
@@ -18,6 +16,8 @@ const MoodList = ({setSection, setSelectMood}) => {
     var [moods, setMoods] = useState([])
     var [blankIcon, setBlankIcon] = useState ('')
     var [reload, setReload] = useState(0)
+
+    const socket = io('https://test4-nymeria-starks-projects.vercel.app'); 
 
     useEffect(() => {
         fetch("https://test4-nymeria-starks-projects.vercel.app/loadMoodLists/", {
