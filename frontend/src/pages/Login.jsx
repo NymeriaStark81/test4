@@ -22,7 +22,6 @@ function Login() {
             })
                 .then((res) => {return res.json()})
                 .then((data) => {
-                    console.log(data)
                     if(data._id){
                         console.log('through')
                         navigate('/homepage', {

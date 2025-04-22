@@ -15,7 +15,7 @@ class authController {
                     if(check){
                         res.json("wrongpass")
                     } else {
-                        res.json(check)
+                        res.json("notexist")
                     }
                 }
         
