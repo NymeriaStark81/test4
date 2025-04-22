@@ -19,9 +19,6 @@ const SECRET_KEY = process.env.SECRET_KEY
 //CORS policy
 app.use(cors({
     origin: '*',
-    methods: '*',
-    allowedHeaders: ['Content-Type', 'Authorization'],
-    credentials: true,   
 }))
 
 
