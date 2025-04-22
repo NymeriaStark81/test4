@@ -145,7 +145,7 @@ const authJournalView = require('./controllers/authJournalView')
 
 const io = new Server(server, {
     cors: {
-        origin: 'https://test4-nymeria-starks-projects.vercel.app',
+        origin: '*',
     }, 
     maxHttpBufferSize: 1e8
 });
@@ -224,11 +224,9 @@ app.use('/', require('./routes'))
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log("mongodb connected");
-    alert('mongodb connected')
 })
 .catch(()=>{
     console.log('failed');
-    alert('failed')
 })
 
 //PORT
