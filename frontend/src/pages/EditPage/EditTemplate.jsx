@@ -41,7 +41,7 @@ import Edit from './EditComp/Edit'
         left: "0"
     }
 ];*/
-const socket = io('https://test4-nymeria-starks-projects.vercel.app'); 
+const socket = io('https://test4-nymeria-starks-projects.vercel.app/'); 
 
 const handleUpdateSquares = (squares, tempID) => {
     socket.emit('update_db', {tempID: tempID, squares: squares})

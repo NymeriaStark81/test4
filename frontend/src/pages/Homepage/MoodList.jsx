@@ -17,7 +17,7 @@ const MoodList = ({setSection, setSelectMood}) => {
     var [blankIcon, setBlankIcon] = useState ('')
     var [reload, setReload] = useState(0)
 
-    const socket = io('https://test4-nymeria-starks-projects.vercel.app');
+    const socket = io('https://test4-nymeria-starks-projects.vercel.app/');
 
     useEffect(() => {
         fetch("https://test4-nymeria-starks-projects.vercel.app/loadMoodLists/", {

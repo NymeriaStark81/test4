@@ -18,7 +18,7 @@ const MoodEdit = ({setSection, selectMood}) => {
     var [reload, setReload] = useState(0)
     var lock = false
 
-    const socket = io('https://test4-nymeria-starks-projects.vercel.app');
+    const socket = io('https://test4-nymeria-starks-projects.vercel.app/');
 
     //load mood list
     useEffect(() => {
