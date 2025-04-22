@@ -145,7 +145,7 @@ const authJournalView = require('./controllers/authJournalView')
 
 const io = new Server(server, {
     cors: {
-        origin: '*',
+        origin: 'https://test4-nymeria-starks-projects.vercel.app',
         methods: ["GET", "POST"],
         transports: ['websocket', 'polling'],
         credentials: true
