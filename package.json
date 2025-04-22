@@ -53,5 +53,8 @@
   },
   "devDependencies": {
     "concurrently": "^8.2.2"
+  },
+  "overrides": {
+    "react": "16.0.0"
   }
 }
