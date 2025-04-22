@@ -13,7 +13,7 @@ function Login() {
     const handleLogin = (e) => {
         try {
             e.preventDefault();
-            fetch("https://test4-nymeria-starks-projects.vercel.app:3000/login/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
