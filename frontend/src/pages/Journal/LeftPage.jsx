@@ -12,7 +12,7 @@ const LeftPage = ({journalID, prevURL, pages, leftPage, droite}) => {
 
     const date = new Date(leftPage.year, leftPage.month, leftPage.date)
 
-    const socket = io('http://localhost:3000'); 
+    const socket = io('https://test4-nymeria-starks-projects.vercel.app'); 
 
     const handleUpdate = () => {
         console.log('1')
