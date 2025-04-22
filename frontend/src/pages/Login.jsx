@@ -23,6 +23,7 @@ function Login() {
                 .then((res) => {return res.json()})
                 .then((data) => {
                     if(data._id){
+                        console.log('through')
                         navigate('/homepage', {
                             state: {
                                 userID: data._id
