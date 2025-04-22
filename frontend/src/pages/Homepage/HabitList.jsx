@@ -17,7 +17,7 @@ const HabitList = ({setSection, setSelectHabit}) => {
 
     //load habit list
     const loadHabit = () => {
-        fetch("http://localhost:3000/loadHabitLists/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadHabitLists/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID}),
             headers: {
@@ -32,7 +32,7 @@ const HabitList = ({setSection, setSelectHabit}) => {
 
     //creat new habit list
     const createHabitList = () => {
-        fetch("http://localhost:3000/createHabit/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/createHabit/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID, habitTitle: habitTitle, habits: habits}),
             headers: {
@@ -55,7 +55,7 @@ const HabitList = ({setSection, setSelectHabit}) => {
 
     //delete habit list
     const delHabitList = (id) => {
-        fetch("http://localhost:3000/deleteHabit/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/deleteHabit/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID, id: id}),
             headers: {

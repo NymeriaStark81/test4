@@ -15,7 +15,7 @@ const HabitEdit = ({setSection, selectHabit}) => {
 
     //load habits when first enter list
     useEffect(() => {
-        fetch("http://localhost:3000/loadHabit/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadHabit/", {
             method: 'POST',
             body: JSON.stringify({habitID: selectHabit}),
             headers: {
@@ -31,7 +31,7 @@ const HabitEdit = ({setSection, selectHabit}) => {
     
     //add habit to list
     const handleUpdateHabit = (lock) => {
-        fetch("http://localhost:3000/updateHabit/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/updateHabit/", {
             method: 'POST',
             body: JSON.stringify({habitID: selectHabit, elements: habits, title: habitTitle, lock: lock}),
             headers: {

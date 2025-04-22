@@ -98,7 +98,7 @@ const handleAddImage = (e, file, squares,  tempID, addItem, setAddItem, handleUp
     e.preventDefault();
     const formData = new FormData();
     formData.append("image", file)
-    fetch("http://localhost:3000/add_image/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/add_image/", {
         method: 'POST',
         body: formData,
     })
@@ -335,7 +335,7 @@ const handleAddDiary = (tempID, squares, handleUpdateSquares, addItem, setAddIte
 const previewHabitTracker = async(e, selectHabit, iconTick, iconUntick, previewGroup, setPreviewGroup, addItem, setAddItem) => {
     e.preventDefault()
     var habits
-    fetch("http://localhost:3000/loadHabit/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/loadHabit/", {
         method: 'POST',
         body: JSON.stringify({habitID: selectHabit}),
         headers: {
@@ -348,7 +348,7 @@ const previewHabitTracker = async(e, selectHabit, iconTick, iconUntick, previewG
             var tick_url, untick_url, text, icon
             const formData = new FormData();
             formData.append("image", iconTick)
-            fetch("http://localhost:3000/add_image/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/add_image/", {
                 method: 'POST',
                 body: formData,
             })
@@ -358,7 +358,7 @@ const previewHabitTracker = async(e, selectHabit, iconTick, iconUntick, previewG
 
                 const formData = new FormData();
                 formData.append("image", iconUntick)
-                fetch("http://localhost:3000/add_image/", {
+                fetch("https://test4-nymeria-starks-projects.vercel.app/add_image/", {
                     method: 'POST',
                     body: formData,
                 })
@@ -772,7 +772,7 @@ const previewHabitYear = async(e, selectHabit, selectYearHabit, iconTick, iconUn
     var tick_url, untick_url
     const formData = new FormData();
     formData.append("image", iconTick)
-    fetch("http://localhost:3000/add_image/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/add_image/", {
         method: 'POST',
         body: formData,
     })
@@ -782,7 +782,7 @@ const previewHabitYear = async(e, selectHabit, selectYearHabit, iconTick, iconUn
 
         const formData = new FormData();
         formData.append("image", iconUntick)
-        fetch("http://localhost:3000/add_image/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/add_image/", {
             method: 'POST',
             body: formData,
         })
@@ -841,7 +841,7 @@ const previewTodo = async(e, iconTick, iconUntick, addBtn, deleteBtn, previewGro
     formData.append("image", deleteBtn)
 
     
-    fetch("http://localhost:3000/add_icon/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/add_icon/", {
         method: 'POST',
         body: formData
     })
@@ -1123,7 +1123,7 @@ const createTodo = (squares, tempID, temp_type, previewGroup, handleUpdateSquare
 const previewMoodTracker = async(e, selectMood, moodType, previewGroup, setPreviewGroup, addItem, setAddItem) => {
     e.preventDefault()
     
-    fetch("http://localhost:3000/loadMood/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/loadMood/", {
         method: 'POST',
         body: JSON.stringify({moodID: selectMood}),
         headers: {
@@ -1630,7 +1630,7 @@ const handleAddTaskAnalys = (e, tempID, refType, squares, handleUpdateSquares, a
 
 const previewHabitAnalys = async(e, selectHabit, refType, previewGroup, setPreviewGroup, addItem, setAddItem) => {
     e.preventDefault()
-    fetch("http://localhost:3000/loadHabit/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/loadHabit/", {
         method: 'POST',
         body: JSON.stringify({habitID: selectHabit}),
         headers: {
@@ -1750,7 +1750,7 @@ const handleAddHabitAnalys = (squares, tempID, temp_type, previewGroup, setSelec
 
 const previewMoodAnalys = async(e, selectMood, refType, previewGroup, setPreviewGroup, addItem, setAddItem) => {
     e.preventDefault()
-    fetch("http://localhost:3000/loadMood/", {
+    fetch("https://test4-nymeria-starks-projects.vercel.app/loadMood/", {
         method: 'POST',
         body: JSON.stringify({moodID: selectMood}),
         headers: {
@@ -1947,7 +1947,7 @@ const Add = ({userID, tempID, temp_type, newComp, squares, previewGroup, setPrev
     var [refType, setRefType] = useState('')
 
     useEffect(() => {
-        fetch("http://localhost:3000/loadHabitLists/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadHabitLists/", {
             method: 'POST',
             body: JSON.stringify({userID: userID}),
             headers: {
@@ -1958,7 +1958,7 @@ const Add = ({userID, tempID, temp_type, newComp, squares, previewGroup, setPrev
                 setHabits(data)
             })
 
-        fetch("http://localhost:3000/loadMoodLists/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadMoodLists/", {
             method: 'POST',
             body: JSON.stringify({userID: userID}),
             headers: {
@@ -1984,7 +1984,7 @@ const Add = ({userID, tempID, temp_type, newComp, squares, previewGroup, setPrev
 
     useEffect(() => {
         if(selectHabit != ''){
-            fetch("http://localhost:3000/loadHabit/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/loadHabit/", {
                 method: 'POST',
                 body: JSON.stringify({habitID: selectHabit}),
                 headers: {

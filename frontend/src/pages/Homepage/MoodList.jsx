@@ -17,10 +17,10 @@ const MoodList = ({setSection, setSelectMood}) => {
     var [blankIcon, setBlankIcon] = useState ('')
     var [reload, setReload] = useState(0)
 
-    const socket = io('http://localhost:3000');
+    const socket = io('https://test4-nymeria-starks-projects.vercel.app/');
 
     useEffect(() => {
-        fetch("http://localhost:3000/loadMoodLists/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadMoodLists/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID}),
             headers: {
@@ -57,7 +57,7 @@ const MoodList = ({setSection, setSelectMood}) => {
             formData.append("image", mood[1])
             formData.append("image", mood[2])
         })
-        fetch("http://localhost:3000/add_icon/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/add_icon/", {
             method: 'POST',
             body: formData
         })
@@ -71,7 +71,7 @@ const MoodList = ({setSection, setSelectMood}) => {
             }
         })
         .then(() => {
-            fetch("http://localhost:3000/createMood/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/createMood/", {
                 method: 'POST',
                 body: JSON.stringify({userID: state.userID, title: moodTitle, blank: blank, moods: newMoods, lock: false}),
                 headers: {
@@ -99,7 +99,7 @@ const MoodList = ({setSection, setSelectMood}) => {
             socket.emit('delete_image', {url: mood[1]})
             socket.emit('delete_image', {url: mood[2]})
         })
-        fetch("http://localhost:3000/deleteMood/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/deleteMood/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID, id: list._id}),
             headers: {

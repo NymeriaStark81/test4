@@ -50,7 +50,7 @@ function Login() {
     const handleSignup = (e) => {
         try {
             e.preventDefault();
-            fetch("http://localhost:3000/signup/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/signup/", {
                 method: 'POST',
                 body: JSON.stringify({username, email, password}),
                 headers: {

@@ -38,7 +38,7 @@ const JournalView = () => {
             .then(async(dataUrl) => {
                 console.log('checkpoint 1')
 
-                await fetch("http://localhost:3000/check_thumbnail_journal/", {
+                await fetch("https://test4-nymeria-starks-projects.vercel.app/check_thumbnail_journal/", {
                     method: 'POST',
                     body: JSON.stringify({journalID: state.journalID}),
                     headers: {
@@ -49,7 +49,7 @@ const JournalView = () => {
                 .then (async(tblink) => {
                     console.log('checkpoint 2')
                     if(tblink == ''){
-                        await fetch("http://localhost:3000/news3_thumbnail_template/", {
+                        await fetch("https://test4-nymeria-starks-projects.vercel.app/news3_thumbnail_template/", {
                             method: 'POST',
                             body: JSON.stringify({dataUrl: dataUrl}),
                             headers: {
@@ -58,7 +58,7 @@ const JournalView = () => {
                         })
                         .then ((res) => {return(res.json())})
                         .then (async(url) => {
-                            fetch("http://localhost:3000/update_thumbnail_journal/", {
+                            fetch("https://test4-nymeria-starks-projects.vercel.app/update_thumbnail_journal/", {
                                 method: 'POST',
                                 body: JSON.stringify({journalID: state.journalID, thumbnail: url}),
                                 headers: {
@@ -68,7 +68,7 @@ const JournalView = () => {
                         )
 
                     } else {
-                        await fetch("http://localhost:3000/updates3_thumbnail_template/", {
+                        await fetch("https://test4-nymeria-starks-projects.vercel.app/updates3_thumbnail_template/", {
                             method: 'POST',
                             body: JSON.stringify({dataUrl: dataUrl, prevURL: tblink}),
                             headers: {
@@ -78,7 +78,7 @@ const JournalView = () => {
                         .then ((res) => {return(res.json())})
                         .then (async(url) => {
                             console.log('checkpoint 3', url)
-                            fetch("http://localhost:3000/update_thumbnail_journal/", {
+                            fetch("https://test4-nymeria-starks-projects.vercel.app/update_thumbnail_journal/", {
                                 method: 'POST',
                                 body: JSON.stringify({journalID: state.journalID, thumbnail: url}),
                                 headers: {
@@ -102,7 +102,7 @@ const JournalView = () => {
 
     //initialization
     useEffect(() => {
-        fetch("http://localhost:3000/initialize_journal/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/initialize_journal/", {
             method: 'POST',
             body: JSON.stringify({journalID: state.journalID}),
             headers: {
@@ -202,7 +202,7 @@ const JournalView = () => {
 
     //update most recent journal
     useEffect(() => {
-        fetch("http://localhost:3000/update_recent/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/update_recent/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID, journalID: state.journalID}),
             headers: {

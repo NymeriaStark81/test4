@@ -21,7 +21,7 @@ const Templates = ({setSection}) => {
     //{templates.map((template, index) => {return(<h3 key={index}>{template._id}</h3>)})}
 
     useEffect(() => {
-        fetch("http://localhost:3000/loadTemplate/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadTemplate/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID}),
             headers: {
@@ -35,7 +35,7 @@ const Templates = ({setSection}) => {
     }, [])
 
     const del = (id) => {
-        fetch("http://localhost:3000/deleteTemplate/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/deleteTemplate/", {
             method: 'POST',
             body: JSON.stringify({id: id, userID: state.userID}),
             headers: {
@@ -49,7 +49,7 @@ const Templates = ({setSection}) => {
     }
 
     const copy = () => {
-        fetch("http://localhost:3000/duplicateTemplate/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/duplicateTemplate/", {
             method: 'POST',
             body: JSON.stringify({duplicate: duplicate, title: title}),
             headers: {

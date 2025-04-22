@@ -18,11 +18,11 @@ const MoodEdit = ({setSection, selectMood}) => {
     var [reload, setReload] = useState(0)
     var lock = false
 
-    const socket = io('http://localhost:3000');
+    const socket = io('https://test4-nymeria-starks-projects.vercel.app/');
 
     //load mood list
     useEffect(() => {
-        fetch("http://localhost:3000/loadMood/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadMood/", {
             method: 'POST',
             body: JSON.stringify({moodID: selectMood}),
             headers: {
@@ -80,7 +80,7 @@ const MoodEdit = ({setSection, selectMood}) => {
             })
 
             //update newly chosen icons to s3
-            fetch("http://localhost:3000/add_icon/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/add_icon/", {
                 method: 'POST',
                 body: formData
             })
@@ -108,7 +108,7 @@ const MoodEdit = ({setSection, selectMood}) => {
             })
             .then(() => {
                 //update DB
-                fetch("http://localhost:3000/updateMood/", {
+                fetch("https://test4-nymeria-starks-projects.vercel.app/updateMood/", {
                     method: 'POST',
                     body: JSON.stringify({userID: state.userID, id: selectMood, title: moodTitle, blank: blankIcon, moods: moods, lock: lock}),
                     headers: {

@@ -13,7 +13,7 @@ const TemplateCreate = ({setSection}) => {
     const createTemplate = (e) => {
         e.preventDefault()
         if(tempType !== '' && layout !== '' && title !== ''){
-            fetch("http://localhost:3000/createTemplate/", {
+            fetch("https://test4-nymeria-starks-projects.vercel.app/createTemplate/", {
                 method: 'POST',
                 body: JSON.stringify({userID: state.userID, temp_type: tempType, title: title, layout: layout}),
                 headers: {

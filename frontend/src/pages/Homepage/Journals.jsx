@@ -27,7 +27,7 @@ const Journals = ({setSection}) => {
 
     //load all journals
     useEffect(()=> {
-        fetch("http://localhost:3000/loadJournal/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadJournal/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID}),
             headers: {
@@ -42,7 +42,7 @@ const Journals = ({setSection}) => {
 
     //delete journal
     const del = (id) => {
-        fetch("http://localhost:3000/deleteJournal/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/deleteJournal/", {
             method: 'POST',
             body: JSON.stringify({id: id, userID: state.userID}),
             headers: {

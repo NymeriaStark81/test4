@@ -119,7 +119,7 @@ async function cropHandle(e, socket, select, cropProp, setCropProp, squares, cha
 const requestBuffer = async (url, cropTransform) => {
     try {
         var buffer;
-        await fetch("http://localhost:3000/requestBuffer/", {
+        await fetch("https://test4-nymeria-starks-projects.vercel.app/requestBuffer/", {
             method: 'POST',
             body: JSON.stringify({url: url, cropTransform: cropTransform}),
             headers: {

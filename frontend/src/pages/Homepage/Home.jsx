@@ -25,7 +25,7 @@ const Homepage = () => {
 
     //load username and most recent journal
     useEffect(() => {
-        fetch("http://localhost:3000/load_user/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/load_user/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID}),
             headers: {
@@ -54,7 +54,7 @@ const Homepage = () => {
                     <button className="recent_journal" 
                         onClick={() => {
                             if(recent != ''){
-                                fetch("http://localhost:3000/find_recent/", {
+                                fetch("https://test4-nymeria-starks-projects.vercel.app/find_recent/", {
                                     method: 'POST',
                                     body: JSON.stringify({journalID: recent}),
                                     headers: {

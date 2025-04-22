@@ -75,7 +75,7 @@ const JournalCreate = ({setSection}) => {
         export_func(blankTemp)
 
 
-        fetch("http://localhost:3000/produceJournal/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/produceJournal/", {
             method: 'POST',
             body: JSON.stringify({
                 userID: state.userID, 
@@ -94,7 +94,7 @@ const JournalCreate = ({setSection}) => {
         }})
             .then((res) => {return res.json()})
             .then((data) => {
-                fetch("http://localhost:3000/add_JSON/", {
+                fetch("https://test4-nymeria-starks-projects.vercel.app/add_JSON/", {
                     method: 'POST',
                     body: JSON.stringify({data: data.pages}),
                     headers: {
@@ -103,7 +103,7 @@ const JournalCreate = ({setSection}) => {
                 })
                 .then((res) => {return res.json()})
                 .then((url) => {
-                    fetch("http://localhost:3000/createJournal/", {
+                    fetch("https://test4-nymeria-starks-projects.vercel.app/createJournal/", {
                         method: 'POST',
                         body: JSON.stringify({... data, pages: url}),
                         headers: {
@@ -125,7 +125,7 @@ const JournalCreate = ({setSection}) => {
 
     //load all templates
     useEffect(()=> {
-        fetch("http://localhost:3000/loadTemplate/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/loadTemplate/", {
             method: 'POST',
             body: JSON.stringify({userID: state.userID}),
             headers: {

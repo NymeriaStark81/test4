@@ -172,7 +172,7 @@ const EditTemplate = () => {
     
     //run only once
     useEffect(() => {
-        fetch("http://localhost:3000/initialization/", {
+        fetch("https://test4-nymeria-starks-projects.vercel.app/initialization/", {
             method: 'POST',
             body: JSON.stringify({tempID: tempID}),
             headers: {
@@ -285,7 +285,7 @@ const EditTemplate = () => {
             .then(async(dataUrl) => {
                 console.log('checkpoint 1', dataUrl)
 
-                await fetch("http://localhost:3000/check_thumbnail_template/", {
+                await fetch("https://test4-nymeria-starks-projects.vercel.app/check_thumbnail_template/", {
                     method: 'POST',
                     body: JSON.stringify({tempID: tempID}),
                     headers: {
@@ -296,7 +296,7 @@ const EditTemplate = () => {
                 .then (async(tblink) => {
                     console.log('checkpoint 2')
                     if(tblink == ''){
-                        await fetch("http://localhost:3000/news3_thumbnail_template/", {
+                        await fetch("https://test4-nymeria-starks-projects.vercel.app/news3_thumbnail_template/", {
                             method: 'POST',
                             body: JSON.stringify({dataUrl: dataUrl}),
                             headers: {
@@ -305,7 +305,7 @@ const EditTemplate = () => {
                         })
                         .then ((res) => {return(res.json())})
                         .then (async(url) => {
-                            fetch("http://localhost:3000/update_thumbnail_template/", {
+                            fetch("https://test4-nymeria-starks-projects.vercel.app/update_thumbnail_template/", {
                                 method: 'POST',
                                 body: JSON.stringify({tempID: tempID, thumbnail: url}),
                                 headers: {
@@ -315,7 +315,7 @@ const EditTemplate = () => {
                         )
 
                     } else {
-                        await fetch("http://localhost:3000/updates3_thumbnail_template/", {
+                        await fetch("https://test4-nymeria-starks-projects.vercel.app/updates3_thumbnail_template/", {
                             method: 'POST',
                             body: JSON.stringify({dataUrl: dataUrl, prevURL: tblink}),
                             headers: {
@@ -325,7 +325,7 @@ const EditTemplate = () => {
                         .then ((res) => {return(res.json())})
                         .then (async(url) => {
                             console.log('checkpoint 3', url)
-                            fetch("http://localhost:3000/update_thumbnail_template/", {
+                            fetch("https://test4-nymeria-starks-projects.vercel.app/update_thumbnail_template/", {
                                 method: 'POST',
                                 body: JSON.stringify({tempID: tempID, thumbnail: url}),
                                 headers: {
