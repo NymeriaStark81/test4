@@ -18,8 +18,6 @@ function Login() {
                 body: JSON.stringify({email, password}),
                 headers: {
                     'Content-Type': 'application/json',
-                    'Access-Control-Allow-Origin': '*',
-                    'Access-Control-Allow-Methods': 'GET, POST',
                 }
             })
                 .then((res) => {return res.json()})
