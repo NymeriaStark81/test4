@@ -224,9 +224,11 @@ app.use('/', require('./routes'))
 mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log("mongodb connected");
+    alert('mongodb connected')
 })
 .catch(()=>{
     console.log('failed');
+    alert('failed')
 })
 
 //PORT
