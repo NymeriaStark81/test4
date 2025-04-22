@@ -22,7 +22,6 @@
     "@fortawesome/react-fontawesome": "^0.2.2",
     "@pqina/pintura": "^8.85.1",
     "@pqina/react-pintura": "^9.0.3",
-    "axios": "^1.7.2",
     "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
     "compression": "^1.7.4",
