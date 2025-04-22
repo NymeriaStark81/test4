@@ -221,7 +221,7 @@ app.get('*', (req, res) => {
 app.use('/', require('./routes'))
 
 //db connect
-mongoose.connect(process.env.MONGO_DB)
+mongoose.connect(process.env.MONGODB_URI)
 .then(()=>{
     console.log("mongodb connected");
 })

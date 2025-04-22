@@ -5,6 +5,7 @@ class authController {
     user_login = async (req, res) => {
         
             try{
+                console.log('ha')
                 const check=await user.findOne({email:req.body.email})
                 const pass=await user.findOne({email:req.body.email, password:req.body.password})
 
