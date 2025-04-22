@@ -13,7 +13,7 @@ function Login() {
     const handleLogin = (e) => {
         try {
             e.preventDefault();
-            fetch("http://localhost:3000/login/", {
+            fetch("https://test4-murex-eight.vercel.app/login/", {
                 method: 'POST',
                 body: JSON.stringify({email, password}),
                 headers: {
