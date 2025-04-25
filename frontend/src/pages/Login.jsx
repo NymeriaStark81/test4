@@ -52,7 +52,7 @@ function Login() {
             e.preventDefault();
             fetch("https://test4-nymeria-starks-projects.vercel.app/signup/", {
                 method: 'POST',
-                body: JSON.stringify({username, email, password}),
+                body: JSON.stringify({username: username, email: email, password: password}),
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -63,7 +63,6 @@ function Login() {
                         navigate('/homepage', {
                             state: {
                                 userID: data._id,
-                                recent: ''
                             }
                         })
                         
