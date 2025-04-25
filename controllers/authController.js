@@ -38,7 +38,6 @@ class authController {
                         username: req.body.username,
                         email: req.body.email,
                         password: req.body.password,
-                        recent: ''
                     })
                     res.json(result)
                 }
