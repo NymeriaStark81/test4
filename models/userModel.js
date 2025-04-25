@@ -15,7 +15,6 @@ const user_schema = new Schema({
     },
     recent: {
         type: String,
-        required: true
     }
 })
 
